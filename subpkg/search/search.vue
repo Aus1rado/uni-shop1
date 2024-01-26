@@ -100,9 +100,9 @@
 				uni.setStorageSync("kw", '[]')
 			},
 			
-			gotoGoodsList() {
+			gotoGoodsList(item) {
 				uni.navigateTo({
-					url: '/subpkg/goods_list/goods_list?query=' + kw
+					url: '/subpkg/goods_list/goods_list?query=' + item
 				})
 			}
 			
