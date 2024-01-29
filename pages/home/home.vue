@@ -8,7 +8,7 @@
 		<!-- 轮播图的区域 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" circular="true">
 			<swiper-item v-for="(item, i) in swiperList" :key="i">
-				<navigator class="swiper-item" :url="'/subpkg/goods_detail/goods_detail?goods_id' + item.goods_id">
+				<navigator class="swiper-item" :url="'/subpkg/goods_detail/goods_detail?goods_id=' + item.goods_id">
 					<image :src="item.image_src"></image>
 				</navigator>
 			</swiper-item>
@@ -47,7 +47,11 @@
 </template>
 
 <script>
+	import badgeMix from '@/mixins/tabbar-badge.js'
+	
 	export default {
+		mixins: [badgeMix],
+		
 		data() {
 			return {
 				// 这是轮播图的数据列表
